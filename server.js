@@ -12,6 +12,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use('/', (req, res) => {
+    res.send("<h1>Welcome to TODO!</>")
+});
+
 app.use('/api/todos', todoRoutes);
 
 const PORT = process.env.PORT || 5000;
